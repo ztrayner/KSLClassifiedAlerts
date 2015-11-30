@@ -1,0 +1,15 @@
+{
+  "name": "KslAlerts",
+  "private": true,
+  "dependencies": {
+    "angular": "1.4.7",
+    "angular-route": "^1.4.5",
+    "angular-bootstrap": "^0.14.2",
+    "bootstrap-css-only": "3.3.5",
+    "angular-spinner": "0.7.0",
+    "angular-xeditable": "^0.1.9"
+  },
+  "resolutions": {
+    "angular": "1.4.8"
+  }
+}
