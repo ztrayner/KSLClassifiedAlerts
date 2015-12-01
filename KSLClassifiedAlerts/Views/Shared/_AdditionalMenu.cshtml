@@ -1,0 +1,10 @@
+﻿@using Microsoft.AspNet.Identity
+@if (Request.IsAuthenticated)
+{
+    <li>@Html.ActionLink("My Searches", "Index", "Searches")</li>
+}
+else
+{
+
+}
+

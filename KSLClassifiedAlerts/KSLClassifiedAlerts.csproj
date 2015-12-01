@@ -173,6 +173,7 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="Controllers\SearchesController.cs" />
     <Compile Include="Models\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
@@ -249,9 +250,16 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Searches\Create.cshtml" />
+    <Content Include="Views\Searches\Delete.cshtml" />
+    <Content Include="Views\Searches\Details.cshtml" />
+    <Content Include="Views\Searches\Edit.cshtml" />
+    <Content Include="Views\Searches\Index.cshtml" />
+    <Content Include="Views\Shared\_AdditionalMenu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Alerts\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

@@ -24,19 +24,25 @@ namespace KSLClassifiedAlerts.Context.Models
         [Display(Name = "Image URL")]
         public string ImageUrl { get; set; }
 
-        public virtual Specification Specifications { get; set; }
-        public virtual ICollection<Search> Search { get; set; }
+        [ForeignKey("Specification")]
+        public int SpecificationId { get; set; }
+
+        public virtual Specification Specification { get; set; }
+        public virtual ICollection<Search> Searches { get; set; }
 
     }
     public class Search
     {
         [Key]
         public int SearchId { get; set; }
-        public string searchURL { get; set; }
-        //I'm not sure how in depth we want to get with users and such but either way we wil need to referenc the userID
-        public int userID { get; set; }
-        
-        public virtual ICollection<Classified> Classified { get; set; }
+        [Display(Name = "Search URL")]
+        public string SearchURL { get; set; }
+        [Display(Name = "Search Name")]
+        public string SearchName { get; set; }
+        [ForeignKey("User")]
+        public string UserID { get; set; }
+        public virtual ApplicationUser User { get; set; }
+        public virtual ICollection<Classified> Classifieds { get; set; }
         
     }
     

@@ -57,8 +57,8 @@ namespace KSLClassifiedAlerts.Migrations
 
                 ApplicationUserManager userManager = new ApplicationUserManager(new UserStore<ApplicationUser>(context));
 
-                userManager.Create(user, "P4SSW0RD!");
-                userManager.Create(user2, "P4SSW0RD!");
+                userManager.Create(user, "P@SSW0RD!");
+                userManager.Create(user2, "P@SSW0RD!");
             }
         }
     }

@@ -22,8 +22,7 @@ namespace KSLClassifiedAlerts.Context.DAL
         public DbSet<Classified> Classifieds { get;set; }
         public DbSet<Specification> Specifications { get; set; }
         public DbSet<Search> Searches { get; set; }
-        public DbSet<SearchClassified> SearchClassifieds { get; set; }
-
+        public override IDbSet<ApplicationUser> Users { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

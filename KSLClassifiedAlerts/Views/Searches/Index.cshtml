@@ -1,0 +1,33 @@
+﻿@model IEnumerable<KSLClassifiedAlerts.Context.Models.Search>
+
+@{
+    ViewBag.Title = "My Saved Searches";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SearchName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            <a class="" href="@item.SearchURL">@Html.DisplayFor(modelItem => item.SearchName)</a>
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.SearchId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.SearchId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.SearchId })
+        </td>
+    </tr>
+}
+
+</table>

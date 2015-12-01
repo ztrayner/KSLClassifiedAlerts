@@ -1,0 +1,34 @@
+﻿@model KSLClassifiedAlerts.Context.Models.Search
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Search</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SearchName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SearchName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SearchURL)
+        </dt>
+
+        <dd>
+            <a class="" href="@Model.SearchURL">@Html.DisplayFor(model => model.SearchURL)</a>
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.SearchId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

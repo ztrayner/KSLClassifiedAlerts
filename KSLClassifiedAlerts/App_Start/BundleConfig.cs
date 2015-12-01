@@ -25,6 +25,7 @@ namespace KSLClassifiedAlerts
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
+                      "~/client/lib/bootcards/dist/css/bootcards.desktop.css",
                       "~/Content/site.css"));
         }
     }
