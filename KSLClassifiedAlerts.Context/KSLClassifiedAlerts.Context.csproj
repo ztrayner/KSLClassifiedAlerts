@@ -148,6 +148,7 @@
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Classified.cs" />
+    <Compile Include="Models\ClassifiedViewModel.cs" />
     <Compile Include="Models\IdentityConfig.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Specifications.cs" />

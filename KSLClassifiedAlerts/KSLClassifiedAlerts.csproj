@@ -274,10 +274,6 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Workspaces\Workspace\BasicNavigation\BasicNavigation\BasicNavigation.csproj">
-      <Project>{503228b9-a788-4749-bec5-e6f18b496d24}</Project>
-      <Name>BasicNavigation</Name>
-    </ProjectReference>
     <ProjectReference Include="..\KSLClassifiedAlerts.Context\KSLClassifiedAlerts.Context.csproj">
       <Project>{cd9a548d-0fec-4f2d-9a79-ac6b93ff12d5}</Project>
       <Name>KSLClassifiedAlerts.Context</Name>
