@@ -10,6 +10,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KSLClassifiedAlerts", "KSLC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KSLClassifiedAlerts.Context", "KSLClassifiedAlerts.Context\KSLClassifiedAlerts.Context.csproj", "{CD9A548D-0FEC-4F2D-9A79-AC6B93FF12D5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicNavigation", "..\..\Workspaces\Workspace\BasicNavigation\BasicNavigation\BasicNavigation.csproj", "{503228B9-A788-4749-BEC5-E6F18B496D24}"
+	ProjectSection(ProjectDependencies) = postProject
+		{CD9A548D-0FEC-4F2D-9A79-AC6B93FF12D5} = {CD9A548D-0FEC-4F2D-9A79-AC6B93FF12D5}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,6 +29,10 @@ Global
 		{CD9A548D-0FEC-4F2D-9A79-AC6B93FF12D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CD9A548D-0FEC-4F2D-9A79-AC6B93FF12D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CD9A548D-0FEC-4F2D-9A79-AC6B93FF12D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{503228B9-A788-4749-BEC5-E6F18B496D24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{503228B9-A788-4749-BEC5-E6F18B496D24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{503228B9-A788-4749-BEC5-E6F18B496D24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{503228B9-A788-4749-BEC5-E6F18B496D24}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

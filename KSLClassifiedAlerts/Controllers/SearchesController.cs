@@ -9,6 +9,8 @@ using System.Web.Mvc;
 using KSLClassifiedAlerts.Context.DAL;
 using KSLClassifiedAlerts.Context.Models;
 using Microsoft.AspNet.Identity;
+using BasicNavigation;
+using System.Diagnostics;
 
 namespace KSLClassifiedAlerts.Controllers
 {
@@ -19,6 +21,7 @@ namespace KSLClassifiedAlerts.Controllers
         // GET: Searches
         public ActionResult Index()
         {
+            
             string userId = User.Identity.GetUserId();
             var searches = db.Searches.Include(s => s.User).Where(s => s.UserID.Equals(userId)).ToList();
             return View(searches);
