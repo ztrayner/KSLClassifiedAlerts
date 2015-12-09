@@ -9,7 +9,6 @@ using System.Web.Mvc;
 using KSLClassifiedAlerts.Context.DAL;
 using KSLClassifiedAlerts.Context.Models;
 using Microsoft.AspNet.Identity;
-using BasicNavigation;
 using System.Diagnostics;
 
 namespace KSLClassifiedAlerts.Controllers
