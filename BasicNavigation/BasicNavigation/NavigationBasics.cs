@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using HtmlAgilityPack;
 using KSLClassifiedAlerts.Context.Models;
 using KSLClassifiedAlerts.Context.DAL;
+using System.Net;
+using System.Net.Mail;
 
 namespace BasicNavigation
 {
@@ -21,6 +23,39 @@ namespace BasicNavigation
         public HtmlWeb htmlWebContext = new HtmlWeb();
         public List<Classified> allListings = new List<Classified>();
 
+        public string sendEmail(string toAddress, string subject, string body)
+        {
+
+            string result = "Message sent Successfully..!!";
+            var fromAddress = "kslclassifiedsscraper@gmail.com";
+            const string fromPassword = "foxconsulting";
+
+            try
+            {
+                var smtp = new SmtpClient
+                {
+                    Host = "smtp.gmail.com",
+                    Port = 587,
+                    EnableSsl = true,
+                    DeliveryMethod = SmtpDeliveryMethod.Network,
+                    UseDefaultCredentials = false,
+                    Credentials = new NetworkCredential(fromAddress, fromPassword),
+                    Timeout = 30000
+                };
+
+                MailMessage message = new MailMessage(fromAddress, toAddress, subject, body);
+                message.IsBodyHtml = true;
+                smtp.Send(message);
+            }
+
+            catch (Exception e)
+            {
+                result = "Error sending Email!";
+                return result;
+            }
+
+            return result;
+        }
 
         public void getPageCount(string SearchUrl)
         {
@@ -109,7 +144,16 @@ namespace BasicNavigation
                 }
 
                 //this is where you will loop through NewListings and format the email
-                
+                string body = "";
+                foreach (var obj in newListings)
+                {
+                    body += "<p>Title: " + obj.title + "</p>";
+                    body += "<p>Price: " + obj.priceToParse + "</p>";
+                    body += "<p>City: " + obj.city + "</p>";
+                    body += "<p><img src='" + obj.imageUrl + "'/></p>";
+                }
+
+                sendEmail("tanner.sawyer@gmail.com", "Test", body);
                 GC.Collect();
                 
                 this.db.SaveChanges();
