@@ -11,7 +11,7 @@ namespace KSLClassifiedAlerts.Context.Models
     {
         [Key]
         public int listingID { get; set; }
-        public int listingId { get; set; }
+        public int kslId { get; set; }
         public string title { get; set; }
         [Display(Name = "Link URL")]
         public string link { get; set; }
@@ -24,8 +24,8 @@ namespace KSLClassifiedAlerts.Context.Models
         [Display(Name = "Image URL")]
         public string imageUrl { get; set; }
         public bool parsed { get; set; }
-
-        public virtual ICollection<Search> Searches { get; set; }
+        public int SearchId { get; set; }
+        public virtual Search search { get; set; }
 
         public void ParseListing()
         {
@@ -67,7 +67,7 @@ namespace KSLClassifiedAlerts.Context.Models
             string[] idSubstrings = this.link.Split('/');
             int index = idSubstrings[3].IndexOf('?');
             int LengthToDelete = idSubstrings[3].Length - index;
-            this.listingId = Int32.Parse(idSubstrings[3].Remove(index, LengthToDelete));
+            this.kslId = Int32.Parse(idSubstrings[3].Remove(index, LengthToDelete));
         }
 
     }
@@ -82,17 +82,7 @@ namespace KSLClassifiedAlerts.Context.Models
         [ForeignKey("User")]
         public string UserID { get; set; }
         public virtual ApplicationUser User { get; set; }
-        public virtual ICollection<Classified> Classifieds { get; set; }
         
     }
     
-    public class SearchClassified
-    {
-        [Key, Column(Order = 0)]
-        public int SearchId { get; set; }
-        [Key, Column(Order = 1)]
-        public int ClassifiedId { get; set; }
-        public virtual Search Search { get; set; }
-        public virtual Classified Classified { get; set; }
-    }
 }
