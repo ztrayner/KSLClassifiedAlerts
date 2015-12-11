@@ -133,27 +133,33 @@ namespace BasicNavigation
                     }
 
                 }
-
+                if(CurrentListings.Count > 0)
+                    { 
                 foreach (var ID in CurrentListings)
                 {
                     var toDelete = this.db.Classifieds.Where(s => s.SearchId == search.SearchId & s.kslId == ID).First();
                     this.db.Classifieds.Remove(toDelete);
                     this.db.SaveChanges();
                 }
+                    }
                     this.updateSearchUrl();
                 }
 
                 //this is where you will loop through NewListings and format the email
                 string body = "";
-                foreach (var obj in newListings)
+                if(newListings.Count > 0)
                 {
-                    body += "<p>Title: " + obj.title + "</p>";
-                    body += "<p>Price: " + obj.priceToParse + "</p>";
-                    body += "<p>City: " + obj.city + "</p>";
-                    body += "<p><img src='" + obj.imageUrl + "'/></p>";
-                }
+                    foreach (var obj in newListings)
+                    {
+                        body += "<p>Title: " + obj.title + "</p>";
+                        body += "<p>Price: " + obj.priceToParse + "</p>";
+                        body += "<p>City: " + obj.city + "</p>";
+                        body += "<p><img src='" + obj.imageUrl + "'/></p>";
+                    }
 
-                sendEmail("tanner.sawyer@gmail.com", "Test", body);
+                    sendEmail("tanner.sawyer@gmail.com", "Test", body);
+                }
+                
                 GC.Collect();
                 
                 this.db.SaveChanges();
